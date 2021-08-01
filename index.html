@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkmate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<style>
+    main {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        margin-top: 20vh;
+    }
+
+    main form {
+        width: 500px;
+
+    }
+
+    .tit {
+        text-align: center;
+        margin-bottom: 10%;
+        color: rgb(166, 112, 253);
+        ;
+    }
+
+    .input {
+        border: none;
+        border-bottom: solid 1px rgb(170, 170, 170);
+        border-radius: 0;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .input:focus {
+        outline-width: 0;
+    }
+
+    .btn {
+        border-radius: 35px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 5%;
+        background-color: rgb(166, 112, 253);
+        color: white;
+        font-size: 20px;
+    }
+
+    .btn:hover {
+        color: white;
+        outline-width: 0;
+        width: 52%;
+
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+    }
+
+    .forget {
+        text-align: center;
+        user-select: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .forget:hover{
+        font-size: 17px;
+
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+    }
+
+    .navi {
+        text-align: center;
+        color: rgb(116, 116, 116);
+        user-select: none;
+        cursor: pointer;
+    }
+    .navi:hover{
+        font-size: 17px;
+
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+    }
+
+</style>
+
+<body>
+
+
+    <main>
+        <form id="loginForm">
+            <h2 class="tit">Sign In</h2>
+            <div class="mb-3">
+                <input type="email" class="input" name="username" placeholder="Username">
+            </div><br>
+            <div class="mb-3">
+                <input type="email" class="input" name="password" placeholder="Password">
+            </div>
+
+            <button type="button" class="btn btn-lg btn">Login</button>
+            <br>
+            <p class="forget">Forget Password?</p>
+            <p class="navi" onclick="reg()">Don't have an account? <span style="color: rgb(166, 112, 253); text-decoration:underline;">Sign
+                    Up</span></p>
+
+        </form>
+
+        <form id="regForm" style="display: none;">
+            <h2 class="tit">Sign Up</h2>
+            <div class="mb-3">
+                <input type="text" class="input" name="name" placeholder="Full Name">
+            </div><br>
+            <div class="mb-3">
+                <input type="email" class="input" name="email" placeholder="Email">
+            </div><br>
+            <div class="mb-3">
+                <input type="text" class="input" name="username" placeholder="Username">
+            </div><br>
+            <div class="mb-3">
+                <input type="email" class="input" name="password" placeholder="Password">
+            </div>
+
+            <button type="button" class="btn btn-lg btn">Sign Up</button>
+            <br>
+            <p class="forget">Forget Password?</p>
+            <p class="navi" onclick="log()">I already have an account, <span style="color: rgb(166, 112, 253); text-decoration:underline;">Sign
+                    In</span></p>
+
+        </form>
+    </main>
+
+
+    <script>
+
+        isNew = true;
+
+        function log() {
+            $("#regForm").fadeOut();
+            setTimeout(() => {
+                $("#loginForm").fadeIn();
+            }, 500)
+        }
+        function reg() {
+            $("#loginForm").fadeOut();
+            setTimeout(() => {
+                $("#regForm").fadeIn();
+            }, 500)
+        }
+
+
+    </script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</body>
+
+</html>
